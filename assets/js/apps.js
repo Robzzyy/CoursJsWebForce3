@@ -153,31 +153,31 @@ if(hasAnimal === true && secondAnimal ==="Chat"){
 
 console.log('secondAnimalName:', secondAnimalName);
 
-let monPersonnage = prompt('Quel est mon personnage préféré');
-if(monPersonnage === "Superman") {
-    alert('Bravo');
-} else {
-    alert('CE PC s\'autodetruira dans 10....9...8...0');
-}
+// let monPersonnage = prompt('Quel est mon personnage préféré');
+// if(monPersonnage === "Superman") {
+//     alert('Bravo');
+// } else {
+//     alert('CE PC s\'autodetruira dans 10....9...8...0');
+// }
 
 //utilisation de 'switch" au lieu des if...else..if
-let heure = prompt('Quelle heure est-il');
+// let heure = prompt('Quelle heure est-il');
 
-switch(heure) {
-    case "8h":
-    console.log('Petit dejeuner');
-    break;
+// switch(heure) {
+//     case "8h":
+//     console.log('Petit dejeuner');
+//     break;
 
-    case "12h":
-        console.log('Déjeuner');
-        break;
-        case "20h":
-        case "21h":
-        console.log("Diner");
-        break;
-        default:
-            console.log('Vous avez pas faim vous?')
-}
+//     case "12h":
+//         console.log('Déjeuner');
+//         break;
+//         case "20h":
+//         case "21h":
+//         console.log("Diner");
+//         break;
+//         default:
+//             console.log('Vous avez pas faim vous?')
+// }
 
 // les ternaires 
 let salutation= "Bonjour";
@@ -226,3 +226,83 @@ for(let i = 0;i< listeIngredients.length;i++){
     document.write(`<li>${listeIngredients[i]}</li>`)
 }
 document.write("</ul></p>");
+
+// la boucle FOR ... OF
+
+
+let oiseau  = {
+    espece:"pie",
+    age:"3mois",
+    habitat:"ville",
+}
+
+for(propriete in oiseau){
+    console.log(`${propriete}: ${oiseau[propriete]}`);
+}
+
+let peintures = new Array ('La Joconde', "l'homme au gant", "le prout");
+
+document.write ('<p><ul>');
+for(let i = 0;i< peintures.length;i++){
+    document.write(`<li>${peintures[i]}</li>`)
+    
+}
+document.write("</ul></p>");
+
+// l'instruction BREAK
+let indexPeinture = null;
+let peintureRecherchee = "l'homme au gant";
+
+for(i=0;i<peintures.length;i++) {
+    if(peintures[i] === peintureRecherchee){
+        indexPeinture =i;
+        break;
+    }
+}
+
+if(indexPeinture) {
+
+}
+
+// tableau
+let t = ["element1","element2","element3"];
+document.write(t);
+
+// les fonctions
+const article = document.querySelector("article");
+console.log('article',article);
+
+article.innerHTML = "<h2>les fonctions</h2>";
+
+function maFonction(parametre1, parametre2, parametre3) {
+    console.log("Execution du code interne de maFonction()....");
+    console.log('parametre1: ',parametre1);
+    console.log('parametre2: ',parametre2);
+    console.log('parametre3: ',parametre3);
+
+    article.innerHTML += "<p><ul>";
+    article.innerHTML +="<li>" + parametre1 + "</li>"
+    article.innerHTML +="<li>" + parametre2 + "</li>"
+    article.innerHTML +="<li>" + parametre3 + "</li>"
+}
+// pour declancher l'execution de maFonction() il faut l'appeler
+maFonction("Chien",true,153);
+
+function roby (nombre) {
+    console.log("Execution du code interne de roby()....");
+    console.log('nombre: ',nombre);
+    article.innerHTML += "<p>" + (nombre*nombre) + "</p>"
+
+}
+
+roby(9);
+
+var animal="singe";
+const maFonction2 = function() {
+    let animal = "prout";
+    let autreAnimal="ahah";
+    console.log(animal);
+    return autreAnimal;
+}
+
+console.log(animal);
